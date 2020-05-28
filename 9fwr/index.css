@@ -1,0 +1,43 @@
+.container {
+  position: relative;
+  height: 90vh;
+}
+
+.btn_container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.btn_primary {
+  display: block;
+  position: relative;
+  padding: 0;
+  z-index: 98;
+  margin: 0 auto;
+  box-shadow: 5px 6px 10px 0 rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  background-color: #fff;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  text-align: center;
+}
+
+.btn_primary:active {
+  -webkit-transform: scale(0.9);
+  transform: scale(0.9);
+  box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.3);
+}
+
+.btn_primary:hover {
+  cursor: pointer;
+  background-color: #00d9ff;
+  box-shadow: 0 8px 15px 0 rgba(0, 0, 0, 0.3);
+}
+
+.icon {
+  font-size: 50px;
+}
