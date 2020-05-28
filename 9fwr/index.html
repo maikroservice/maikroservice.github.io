@@ -75,10 +75,23 @@
   <body>
     <div class="container">
       <div class="btn_container">
-        <button class="btn_primary" onClick="confetti.toggle()">
+        <button
+          id="confetti-cta"
+          class="btn_primary"
+          onClick="confetti.toggle()"
+        >
           <span class="icon">&#x1F389;</span>
         </button>
       </div>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
+    <script>
+      $("#confetti-cta").click(function () {
+        analytics.track("confetti rain initiated", {
+          title: "confetti button CTA",
+          author: "maikroservice",
+        });
+      });
+    </script>
   </body>
 </html>
