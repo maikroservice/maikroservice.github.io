@@ -84,9 +84,13 @@
         </button>
       </div>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
+      crossorigin="anonymous"
+    ></script>
     <script>
-      $("#confetti-cta").click(function () {
+      $("#confetti-cta").click(() => {
         analytics.track("confetti rain initiated", {
           title: "confetti button CTA",
           author: "maikroservice",
