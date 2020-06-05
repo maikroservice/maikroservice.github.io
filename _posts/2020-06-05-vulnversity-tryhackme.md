@@ -20,15 +20,22 @@ The setup for pen-testing the tryhackme-boxes (capture the flags) includes kali-
 After installing kali in a vm we connect via vpn to tryhackme with their provided openvpn config.
 Then we can start the box, copy the IP and start reconnaissance. 
 
-1. check if it is a web server by entering the IP into a browser
-1. to find open ports we can utilize a tool called network mapper (nmap):
+* check if it is a web server by entering the IP into a browser
+* to find open ports we can utilize a tool called network mapper (nmap):
 
 ```bash
 nmap -sV <box ip>
 ```
 
-1. We will see that 6 ports are open and one of them `3333` is exposing what seems to be a webserver
-1. upon opening the <box ip>:3333 we can see a landing page which confirms that this is a webserver
-1. next we can use a enumeration to identify which urls can be reached by employing a common-wordlist together with GoBuster
-  
-  TO BE CONTINUED
+* We will see that 6 ports are open and one of them `3333` is exposing what seems to be a webserver
+* upon opening the <box ip>:3333 we can see a landing page which confirms that this is a webserver
+* next we can use a enumeration to identify which urls can be reached by employing a common-wordlist together with GoBuster
+* This does identify `/internal` as an additional page to be looked at which needs additional input (can be identified by `HTTP-Response Statuscode 301`)
+* Upon visiting the page we see an upload form and can try to upload for example a `*.php` file to be able to execute external code on the server
+* This unfortunately does not work, the file extension is blocked by the server
+
+
+So how do we find out which files/extensions are allowed and not blocked without the server telling us exactly in the error message?
+
+** Enter Burpsuite **
+
